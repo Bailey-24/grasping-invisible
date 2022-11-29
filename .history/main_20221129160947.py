@@ -415,7 +415,7 @@ def main(args):
             # Compute training labels
             label_value, prev_reward_value = trainer.get_label_value(
                 prev_primitive_action, motion_target_oriented, env_change_detected, push_effective, prev_target_grasped,
-                color_heightmap, valid_depth_heightmap, target_mask_heightmap) # label_value == expected_reward, prev_reward_value == current_reward
+                color_heightmap, valid_depth_heightmap, target_mask_heightmap)
             trainer.label_value_log.append([label_value])
             logger.write_to_log('label-value', trainer.label_value_log)
             trainer.reward_value_log.append([prev_reward_value])

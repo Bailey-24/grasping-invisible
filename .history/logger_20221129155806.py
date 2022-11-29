@@ -82,10 +82,6 @@ class Logger():
 
     def save_model(self, iteration, model):
         torch.save(model.cpu().state_dict(), os.path.join(self.critic_directory, 'critic-%06d.pth' % iteration))
-        
-    def save_model2(self, iteration, model):
-        torch.save(model.cpu().state_dict(), os.path.join(self.critic_directory, 'critic.pth'))
-        # torch.save(model.cpu().state_dict(), os.path.join(self.critic_directory, 'critic-%06d.pth' % iteration))
 
     def save_visualizations(self, iteration, affordance_vis, name):
         cv2.imwrite(os.path.join(self.visualizations_directory, '%06d.%s.png' % (iteration,name)), affordance_vis)

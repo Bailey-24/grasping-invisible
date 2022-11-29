@@ -117,12 +117,6 @@ class Coordinator(object):
         save_path = os.path.join(self.save_dir, save_filename)
         torch.save(self.net.cpu().state_dict(), save_path)
 
-    def save_networks2(self, which_epoch):
-        save_filename = 'coordinator.pth'
-        # save_filename = 'coordinator-%06d.pth' % which_epoch
-        save_path = os.path.join(self.save_dir, save_filename)
-        torch.save(self.net.cpu().state_dict(), save_path)
-        
     def load_networks(self, load_path):
         self.net.load_state_dict(torch.load(load_path))
 
